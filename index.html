@@ -21,11 +21,11 @@
                         <h1 class="text-center text-lg">Login Now</h1>
                       <fieldset class="fieldset">
                         <label class="label">Phone Number</label>
-                        <input type="text" class="input" placeholder="Enter Your Phone Number" />
+                        <input id="phone-number" type="text" class="input" placeholder="Enter Your Phone Number" />
                         <label class="label">Pin</label>
-                        <input type="password" class="input" placeholder="Type Your Pin" />
+                        <input type="password" class="input" autocomplete="off" placeholder="Type Your Pin" />
                         <div><a class="link link-hover">Forgot password?</a></div>
-                        <button class="btn btn-neutral mt-4">Login</button>
+                        <button id="button-login" class="btn btn-neutral mt-4">Login</button>
                       </fieldset>
                     </div>
                   </div>
@@ -35,5 +35,7 @@
             </div>
           </div>
     </main>
+
+    <script src="./js/login.js"></script>
 </body>
 </html>
