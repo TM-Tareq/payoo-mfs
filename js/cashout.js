@@ -17,6 +17,9 @@ document.getElementById('btn-cash-out').addEventListener('click', function(event
         // const balance = document.getElementById('account-balance').innerText;
         // const balanceNumber = parseFloat(balance);
         const balance = getTextFieldValueById('account-balance');
+
+        if(cashOut > balance)
+            return;
         // reduce the balance
         // const newBalance = balanceNumber - cashOut;
         const newBalance = balance - cashOut;
