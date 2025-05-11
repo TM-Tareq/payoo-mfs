@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="flex justify-center">
-        <div class="mockup-phone">
+        <div class="mockup-phone flex flex-col justify-center text-center">
             <div class="mockup-phone-camera"></div>
             <div class="mockup-phone-display bg-gray-300 text-black grid place-content-center">
                 
@@ -23,6 +23,7 @@
                         </div>
                       </div>
                  </div>
+                 <div class="divider"></div>
                  <!-- user action button -->
                   <div>
                     <button class="btn btn-lg">Add Money</button>
@@ -34,10 +35,10 @@
                         <div class="card-body">
                           <fieldset class="fieldset">
                             <label class="label">Amount</label>
-                            <input type="text" class="input" placeholder="Put the wanted amount" />
+                            <input id="input-add-money" type="text" class="input" placeholder="Put the wanted amount" />
                             <label class="label">Pin Number</label>
-                            <input type="password" class="input" placeholder="Password" autocomplete="off"/>
-                            <button class="btn btn-neutral mt-4 bg-cyan-800">Add Money</button>
+                            <input id="4" type="password" class="input" placeholder="Password" autocomplete="off"/>
+                            <button id="btn-add-money" class="btn btn-neutral mt-4 bg-cyan-800">Add Money</button>
                           </fieldset>
                         </div>
                       </div>
@@ -46,5 +47,8 @@
             </div>
         </div>
     </main>
+
+
+    <script src="./js/home.js"></script>
 </body>
-</html>?
+</html>
