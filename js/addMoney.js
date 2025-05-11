@@ -14,3 +14,30 @@
  * 6. display/update the balance in the DOM/UI
  * 
  */
+
+document.getElementById('btn-add-money').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // get money & the pin Number
+    const addMoney = document.getElementById('input-add-money').value;
+    const addMoneyNumber = parseFloat(addMoney);
+    const pinNumber = document.getElementById('input-pin-number').value;
+
+    // console.log(addMoney, pinNumber)
+
+    if(pinNumber === '123') {
+        // add money to the account
+        const balance = document.getElementById('account-balance').innerText;
+        console.log(balance);
+        const balanceNumber = parseFloat(balance);
+
+        // new balance
+        const newBalance = balanceNumber + addMoneyNumber;
+
+        // update DOM with the updated balance
+        document.getElementById('account-balance').innerText = newBalance;
+    
+    } else {
+        alert('Failed to add money. Please try again later');
+    }
+})
