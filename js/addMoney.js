@@ -19,23 +19,36 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
     event.preventDefault();
 
     // get money & the pin Number
-    const addMoney = document.getElementById('input-add-money').value;
-    const addMoneyNumber = parseFloat(addMoney);
-    const pinNumber = document.getElementById('input-pin-number').value;
+    // const addMoney = document.getElementById('input-add-money').value;
+    // const addMoneyNumber = parseFloat(addMoney);
+    // getInputFieldValueById();
+    const addMoney = getInputFieldValueById('input-add-money');
+    const pinNumber = getInputFieldValueById('input-pin-number'); 
+
+    // const pinNumber = document.getElementById('input-pin-number').value;
 
     // console.log(addMoney, pinNumber)
 
-    if(pinNumber === '123') {
+    if(!isNaN(addMoney) && pinNumber === 123) {
         // add money to the account
-        const balance = document.getElementById('account-balance').innerText;
-        console.log(balance);
-        const balanceNumber = parseFloat(balance);
+        // const balance = document.getElementById('account-balance').innerText;
+        // console.log(balance);
+        // const balanceNumber = parseFloat(balance);
 
+        const balance = getTextFieldValueById('account-balance');
         // new balance
-        const newBalance = balanceNumber + addMoneyNumber;
+        const newBalance = balance + addMoney;
 
         // update DOM with the updated balance
         document.getElementById('account-balance').innerText = newBalance;
+        // add to transiction history
+        const div = document.createElement('div');
+        div.classList.add('bg-green-700');
+        div.innerHTML = `
+            <h4 class ="text-2xl font-bold">Cash Out</h4>
+            <p>${addMoney} Added. New Balance ${newBalance}</p>
+        `
+        document.getElementById('transaction-container').appendChild(div);
     
     } else {
         alert('Failed to add money. Please try again later');
